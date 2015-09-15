@@ -127,7 +127,10 @@ if(SampleType == 4)treefilename = "/eos/uscms/store/user/sflowers/treeMaker/June
   std::string s_end = "_" + str_jobN + ".root";
   if( Njobs==1 ) s_end = ".root";
 
-std::string histofilename = "/eos/uscms/store/user/sflowers/TreeReader/June30_June18Trees/" + sampleName + s_end;
+
+  // ***********************************
+  // ***** Output file directory  ******
+ std::string histofilename = "/uscms/home/satoshi/nobackup/ohio/testoutput/" + sampleName + s_end;
 
 
   std::cout << "  treefilename  = " << treefilename.c_str() << std::endl;
