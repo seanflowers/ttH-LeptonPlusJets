@@ -118,10 +118,12 @@ if(SampleType == 4) sampleName = "ttW";
   str_jobN = stream.str();
 
 
-std::string treefilename = "/eos/uscms/store/user/sflowers/treeMaker/June18_BDTvars_ttX_56csvV/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/Phys14DR-PU20bx25_PHYS14_25_V1-v1_yggdrasilTree_v1/150622_003128/0000/*.root";
-if(SampleType == 1)treefilename = "/eos/uscms/store/user/sflowers/treeMaker/June18_BDTvars_ttX_56csvV/TTbarH_M-125_13TeV_amcatnlo-pythia8-tauola/Phys14DR-PU20bx25_tsg_PHYS14_25_V1-v2_v1_yggdrasilTree_v1/150622_003226/0000/*.root";
-if(SampleType == 3)treefilename = "/eos/uscms/store/user/sflowers/treeMaker/June18_BDTvars_ttX_56csvV/TTZJets_Tune4C_13TeV-madgraph-tauola/Phys14DR-PU20bx25_PHYS14_25_V1-v1_yggdrasilTree_v1/150622_003650/0000/*.root";
-if(SampleType == 4)treefilename = "/eos/uscms/store/user/sflowers/treeMaker/June18_BDTvars_ttX_56csvV/TTWJets_Tune4C_13TeV-madgraph-tauola/Phys14DR-PU20bx25_PHYS14_25_V1-v1_yggdrasilTree_v1/150622_003542/0000/*.root";
+  std::string __my_eos__("/eos/uscms/store/user/satoshi/");
+
+  std::string treefilename = __my_eos__ + "TT_TuneCUETP8M1_13TeV-powheg-pythia8/Validation_v1/150915_132026/0000" + "/*.root";
+  if(SampleType == 1)treefilename =  __my_eos__ + "ttHJetTobb_M125_13TeV_amcatnloFXFX_madspin_pythia8/Validation_v1/150911_174759/0000" + "/*.root";
+  if(SampleType == 3)treefilename =  __my_eos__ + "" + "/*.root";
+  if(SampleType == 4)treefilename =  __my_eos__ + "" + "/*.root";
 
 
   std::string s_end = "_" + str_jobN + ".root";
