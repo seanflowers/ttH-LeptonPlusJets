@@ -72,8 +72,12 @@ void yggdrasil_treeReader_13TeV(  int SampleType=2,int SplitType =2, int maxNent
 
 int insample=1;
 
-  TFile* f_CSVwgt_HF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_hf_IT_FlatSF.root").c_str());
-  TFile* f_CSVwgt_LF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_lf_IT_FlatSF.root").c_str());
+//TFile* f_CSVwgt_HF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_hf_IT_FlatSF.root").c_str());
+//TFile* f_CSVwgt_LF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_lf_IT_FlatSF.root").c_str());
+
+  TFile* f_CSVwgt_HF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_hf_IT_FlatSF_2015_07_27.root").c_str());
+  TFile* f_CSVwgt_LF = new TFile ((string(getenv("CMSSW_BASE")) + "/src/ttH-LeptonPlusJets/AnalysisCode/data/csv_rwt_lf_IT_FlatSF_2015_07_27.root").c_str());
+
 
   fillCSVhistos(f_CSVwgt_HF, f_CSVwgt_LF);
 
