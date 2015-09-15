@@ -2623,6 +2623,12 @@ double get_csv_wgt( vvdouble jets, vdouble jetCSV, vint jetFlavor, int iSys, dou
 
     if (iPt < 0 || iEta < 0) std::cout << "Error, couldn't find Pt, Eta bins for this b-flavor jet, jetPt = " << jetPt << ", jetAbsEta = " << jetAbsEta << std::endl;
 
+    // tentative solution...
+    if (iPt < 0 || iEta < 0){
+      if( iPt < 0 ){ iPt = 0  ;} 
+      if( iEta < 0 ){ iEta = 0;} 
+    }
+
     if (abs(flavor) == 5 ){
       int useCSVBin = (csv>=0.) ? h_csv_wgt_hf[iSysHF][iPt]->FindBin(csv) : 1;
       double iCSVWgtHF = h_csv_wgt_hf[iSysHF][iPt]->GetBinContent(useCSVBin);
