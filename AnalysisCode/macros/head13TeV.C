@@ -4,7 +4,7 @@
   TString dummy = makeshared.ReplaceAll("-W ", "");
   gSystem->SetMakeSharedLib(makeshared);
   //TString dummy = makeshared.ReplaceAll("-Wshadow ", "");
-  TString dummy = makeshared.ReplaceAll("-Wshadow ", "-std=c++0x ");
+  TString dummy2 = makeshared.ReplaceAll("-Wshadow ", "-std=c++0x ");
   gSystem->SetMakeSharedLib(makeshared);
   gSystem->Load("libFWCoreFWLite");
   AutoLibraryLoader::enable();
