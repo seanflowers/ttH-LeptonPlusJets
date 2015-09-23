@@ -1739,7 +1739,7 @@ if(SampleType ==4)MyWgt=MyttWwgt;
       double csvWgtHF_loose, csvWgtLF_loose, csvWgtCF_loose;
 
       double newCSVwgt = ( insample<0 ) ? 1 : get_csv_wgt(jet_vect_TLV,jet_CSV,jet_flavour,treeSys, csvWgtHF, csvWgtLF, csvWgtCF);
-      double newCSVwgt_loose = ( insample<0 ) ? 1 : get_csv_wgt(jet_loose_vect_TLV,jet_loose_CSV,jet_loose_flavour,treeSys, csvWgtHF_loose, csvWgtLF_loose, csvWgtCF_loose);
+      double newCSVwgt_loose = ( insample<0 ) ? 1 : 1 ; 
 
       double wgt_newCSV = ( insample<0 ) ? 1 : wgt_noCSV*newCSVwgt;
       double wgt_looseNewCSV = ( insample<0 ) ? 1 : wgt_noCSV*newCSVwgt_loose;
