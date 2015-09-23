@@ -33,10 +33,10 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
 
   ///////////////////////////////////////////////////////
 
-  int Nsample = 8;//38;
+  int Nsample = 6;//38;
   int Nsignal = 1; //9+72;
   int Nsample_all = Nsample + Nsignal;
-  TFile *file[9];
+  TFile *file[7];
 
   TString lepType = "";
   if( lepSelection==0 )      lepType = "mu_sel";
@@ -51,17 +51,17 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   std::vector<TString> datasets(Nsample_all);
   datasets[0]  = "SingleMu_2012ABCD_BEAN_53xOn53x";
 
-  datasets[1] = "ttZ";
-  datasets[2] = "ttW";
+ // datasets[1] = "ttZ";
+ // datasets[2] = "ttW";
 
-  datasets[3] = "ttlf";
-  datasets[4] = "ttcc";
-  datasets[5] = "ttbb";
-  datasets[6] = "ttb";
+  datasets[1] = "ttlf";
+  datasets[2] = "ttcc";
+  datasets[3] = "ttbb";
+  datasets[4] = "ttb";
 
-  datasets[7] = "ttH";
+  datasets[5] = "ttH";
 
-  datasets[8] = "ttB";
+  datasets[6] = "tt2b";
 
 
 
@@ -125,7 +125,7 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   else if( ANNtype_==17) histoname1.push_back("h_disc_final10v17_8TeV_CFMlpANN_BDT");
   else if( ANNtype_==18) histoname1.push_back("h_disc_final10v16_8TeV_CFMlpANN_BDT");
   else if( ANNtype_==19) histoname1.push_back("h_disc_final10v16_8TeV_CFMlpANN_BDT");
-  else histoname1.push_back("h_Reader_Output");
+  else histoname1.push_back("h_BDT_Output_IncludeWgt_even_");
 
 
   std::vector<std::string> old_catNames;
@@ -181,8 +181,8 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   // new_sysLabels.push_back("_CMS_eff_bDown");
   // new_sysLabels.push_back("_CMS_fake_bUp");
   // new_sysLabels.push_back("_CMS_fake_bDown");
-  // new_sysLabels.push_back("_CMS_res_jUp");
-  // new_sysLabels.push_back("_CMS_res_jDown");
+   new_sysLabels.push_back("_CMS_res_jUp");
+   new_sysLabels.push_back("_CMS_res_jDown");
   new_sysLabels.push_back("_CMS_scale_jUp");
   new_sysLabels.push_back("_CMS_scale_jDown");
   // new_sysLabels.push_back("_CMS_ttH_topPtcorrUp");
@@ -234,8 +234,8 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   // single top
 
   // ttV
-  int bin_ttZ     = 1;
-  int bin_ttW     = 2;
+ // int bin_ttZ     = 1;
+ // int bin_ttW     = 2;
 
   // tt + lf
   int bin_ttbar_lf    = 3;
@@ -274,10 +274,10 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   bkg_ttbar_other.push_back(bin_ttbar_lf);
 
 
-  std::vector<int> bkg_ttZ;
-  bkg_ttZ.push_back(bin_ttZ);
-  std::vector<int> bkg_ttW;
-  bkg_ttW.push_back(bin_ttW);
+  //std::vector<int> bkg_ttZ;
+  //bkg_ttZ.push_back(bin_ttZ);
+  //std::vector<int> bkg_ttW;
+  //bkg_ttW.push_back(bin_ttW);
 
 
   std::vector<int> sig_ttH125;
@@ -296,8 +296,8 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
   samples_to_use.push_back(bkg_ttbar_ccbar);
   samples_to_use.push_back(bkg_ttbar_bbbar);
   samples_to_use.push_back(bkg_ttbar_b);
-  samples_to_use.push_back(bkg_ttW);
-  samples_to_use.push_back(bkg_ttZ);
+ // samples_to_use.push_back(bkg_ttW);
+ // samples_to_use.push_back(bkg_ttZ);
 
   samples_to_use.push_back(sig_ttH125);
   samples_to_use.push_back(bkg_ttbar_B);
@@ -322,7 +322,8 @@ void collect_disc_results_53x( int lepSelection=-1, int ANNtype_=0 ) {
 	for( int k=0; k<int(old_sysLabels.size()); k++ ){
 	  if( (sample[iNSamp].find("data")!=std::string::npos) && k!=0 ) continue;
 
-	  std::string hname = hname_tmp + "_" + old_catNames[j] + "_finall_May10_optimized" + old_sysLabels[k];
+	 // std::string hname = hname_tmp + "_" + old_catNames[j] + "_finall_May10_optimized" + old_sysLabels[k];
+	  std::string hname = hname_tmp + old_catNames[j] + old_sysLabels[k];
 	  std::string hname_use = hname_tmp + "_use_" + old_catNames[j] + old_sysLabels[k];
 
 	  bool firstSample = true;
